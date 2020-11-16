@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/w_200"
+    android:layout_margin="@dimen/w_5"
+    android:layout_height="@dimen/w_200">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/item_image_adapter"
+            android:layout_width="match_parent"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/g"
+            android:scaleType="fitXY"
+            android:padding="@dimen/w_5"
+            android:layout_above="@+id/btnSetWallpaper"
+            android:layout_height="match_parent"/>
+        <Button
+            android:id="@+id/btnSetWallpaper"
+            android:layout_width="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/txt_setWallpaper"
+            android:shadowColor="#2AA89B"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:textColor="#EDEDFF"
+            android:textSize="@dimen/s_10"
+            android:background="@drawable/button_setwallpaper"
+            android:layout_height="@dimen/h_30"/>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

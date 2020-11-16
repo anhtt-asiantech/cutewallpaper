@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">CuteWallpaper</string>
+    <string name="dialog_ok_btn">OK</string>
+    <string name="txt_wallpaper">Wallpaper</string>
+    <string name="txt_download">Download</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-3840180634112397/8982467441</string>
+
+    <string name="banner_full_screen">ca-app-pub-3840180634112397/5938513462</string>
+    <string name="txt_photo">Photo</string>
+    <string name="txt_default">Default</string>
+    <string name="txt_folder">Folder</string>
+    <string name="txt_close">Close</string>
+    <string name="txt_no_data">No Data</string>
+    <string name="txt_setWallpaper">Set Wallpaper</string>
+    <string name="txt_home_screen">HOME SCREEN</string>
+    <string name="txt_lock_screen">LOCK SCREEN</string>
+    <string name="txt_home_lock_screen"><![CDATA[HOME&LOCK SCREEN]]></string>
+    <string name="txt_version">1.0.1</string>
+</resources>

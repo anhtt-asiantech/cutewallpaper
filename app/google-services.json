@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "358338756030",
+    "firebase_url": "https://droselivewallpaper.firebaseio.com",
+    "project_id": "droselivewallpaper",
+    "storage_bucket": "droselivewallpaper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358338756030:android:8c4289c744452454",
+        "android_client_info": {
+          "package_name": "com.anhttvn.cutewallpaper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "358338756030-ik5eesmi8t9c9n16t2va50rohus3j7er.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anhttvn.cutewallpaper",
+            "certificate_hash": "d1df58361f86094e8b31971fccbb3bc209324591"
+          }
+        },
+        {
+          "client_id": "358338756030-cvsjv7jq090b6jp6pa69o27i6e9slg4i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCNlvVJD2ANAYTIznqqrY70Ow-hxv2f3A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358338756030-cvsjv7jq090b6jp6pa69o27i6e9slg4i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/view_function_download"
+        android:layout_width="match_parent"
+        android:background="@drawable/gradient_realative"
+        android:layout_height="@dimen/w_50">
+        <ImageView
+            android:layout_width="@dimen/w_50"
+            android:onClick="eventBack"
+            android:contentDescription="@string/app_name"
+            android:layout_centerVertical="true"
+            android:src="@drawable/image_select_back"
+            android:layout_height="@dimen/w_30"/>
+        <TextView
+            android:id="@+id/tv_name_download"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/txt_download"
+            android:textSize="@dimen/s_30"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/view_function_download"
+        android:layout_above="@+id/ads_download"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_download"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:id="@+id/tv_no_data"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/txt_no_data"
+            android:textSize="@dimen/s_30"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            ads:drawableStartCompat="@drawable/ic_note_data" />
+    </RelativeLayout>
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/ads_download"
+        android:layout_width="match_parent"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
