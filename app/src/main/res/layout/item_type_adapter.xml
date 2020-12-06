@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/w_2"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/rl_adapter_type"
+        android:layout_width="match_parent"
+        android:padding="@dimen/w_3"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/img_item_type"
+            android:layout_width="@dimen/w_150"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitXY"
+            android:background="@drawable/custom_drop_shadow_drawable"
+            android:layout_height="@dimen/w_150"/>
+        <TextView
+            android:id="@+id/tv_title_type"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/img_item_type"
+            android:layout_toEndOf="@+id/img_item_type"
+            android:textSize="@dimen/s_30"
+            android:text="@string/txt_download"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/ads_type"
+        android:layout_width="match_parent"
+        ads:adSize="SMART_BANNER"
+        android:visibility="gone"
+        ads:adUnitId="@string/banner_ad_unit_id"
+        android:layout_height="wrap_content"/>
+</androidx.cardview.widget.CardView>

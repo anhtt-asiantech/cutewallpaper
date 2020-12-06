@@ -33,7 +33,7 @@
         android:gravity="center"
         android:background="@drawable/dot_background_photo"
         android:orientation="horizontal"
-        android:layout_height="@dimen/h_50">
+        android:layout_height="@dimen/w_50">
         <Button
             android:id="@+id/btnDefault"
             android:layout_width="@dimen/w_100"
@@ -47,7 +47,7 @@
             android:textColor="#EDEDFF"
             android:textSize="@dimen/s_10"
             android:background="@drawable/button_gradient_download"
-            android:layout_height="@dimen/h_30"/>
+            android:layout_height="@dimen/w_30"/>
         <Button
             android:id="@+id/btnFolder"
             android:layout_width="@dimen/w_100"
@@ -60,7 +60,7 @@
             android:textColor="#EDEDFF"
             android:textSize="@dimen/s_10"
             android:background="@drawable/button_gradient_download"
-            android:layout_height="@dimen/h_30"/>
+            android:layout_height="@dimen/w_30"/>
 
     </LinearLayout>
     <RelativeLayout

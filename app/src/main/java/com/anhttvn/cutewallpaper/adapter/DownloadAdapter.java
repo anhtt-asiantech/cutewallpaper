@@ -12,12 +12,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.anhttvn.cutewallpaper.R;
 import com.anhttvn.cutewallpaper.model.Cutewallpaper;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
@@ -26,16 +29,20 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class DownloadAdapter extends RecyclerView.Adapter<DownloadAdapter.ViewHolderDownload>  {
-    private List<Cutewallpaper> mlistPhoto;
+public class DownloadAdapter extends RecyclerView.Adapter<DownloadAdapter.ViewHolderDownload> implements
+        View.OnClickListener {
+    private ArrayList<Cutewallpaper> mlistPhoto;
     private Context mContext;
-    public DownloadAdapter(Context context,List<Cutewallpaper> list) {
+    private OnclickDownload mOnclickDownload;
+    public DownloadAdapter(Context context,ArrayList<Cutewallpaper> list, OnclickDownload click) {
         super();
         this.mContext = context;
         this.mlistPhoto = list;
+        mOnclickDownload = click;
     }
     @NonNull
     @Override
@@ -48,14 +55,21 @@ public class DownloadAdapter extends RecyclerView.Adapter<DownloadAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderDownload holder, int position) {
-        String path = this.mlistPhoto.get(position).getUrl();
-        Picasso.with(mContext).load(path).into(holder.imgHolder);
-        holder.btnDownload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                downloadImage(path);
-            }
-        });
+        Cutewallpaper cute = mlistPhoto.get(position);
+        if (cute.getAds() == 1) {
+            holder.rl_download.setVisibility(View.GONE);
+            holder.ads.setVisibility(View.VISIBLE);
+            showAdsBanner(holder.ads);
+        } else {
+            holder.rl_download.setVisibility(View.VISIBLE);
+            holder.ads.setVisibility(View.GONE);
+
+            Picasso.with(mContext).load(cute.getUrl()).into(holder.imgHolder);
+            holder.btnDownload.setOnClickListener(this);
+            holder.btnDownload.setTag(position);
+
+        }
+
     }
 
     @Override
@@ -63,60 +77,39 @@ public class DownloadAdapter extends RecyclerView.Adapter<DownloadAdapter.ViewHo
         return mlistPhoto.size();
     }
 
-    public void downloadImage(String pathURL) {
-        ProgressDialog dialog = new ProgressDialog(mContext);
-        dialog.setMessage("Please wait Download.....");
-        dialog.show();
-        Picasso.with(mContext)
-                .load(pathURL)
-                .into(new Target() {
-                          @Override
-                          public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                              try {
-                                  String root = Environment.getExternalStorageDirectory().toString();
-                                  File myDir = new File(root + "/CuteWallpaperVN");
 
-                                  if (!myDir.exists()) {
-                                      myDir.mkdirs();
-                                  }
 
-                                  String name = new Date().toString() + ".jpg";
-                                  myDir = new File(myDir, name);
-                                  FileOutputStream out = new FileOutputStream(myDir);
-                                  bitmap.compress(Bitmap.CompressFormat.JPEG, 90, out);
-                                  new android.os.Handler().postDelayed(
-                                          new Runnable() {
-                                              public void run() {
-                                                  dialog.dismiss();
-                                              }
-                                          },
-                                          1000);
-                                  out.flush();
-                                  out.close();
+    public void showAdsBanner (AdView ads) {
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("16F857DC15DB4E25CF35D27FB44DE5D9").build();
+        ads.loadAd(adRequest);
+    }
 
-                              } catch(Exception e){
-                                  // some action
-                              }
-                          }
+    @Override
+    public void onClick(View v) {
+        int position = Integer.parseInt(v.getTag()+"");
+        switch (v.getId()){
+            case R.id.btnDownloadURL:
+                mOnclickDownload.clickDownload(position);
+                break;
 
-                          @Override
-                          public void onBitmapFailed(Drawable errorDrawable) {
-                          }
-
-                          @Override
-                          public void onPrepareLoad(Drawable placeHolderDrawable) {
-                          }
-                      }
-                );
+        }
     }
 
     public class ViewHolderDownload extends RecyclerView.ViewHolder {
         private ImageView imgHolder;
         private Button btnDownload;
+        private AdView ads;
+        private RelativeLayout rl_download;
         public ViewHolderDownload(@NonNull View itemView) {
             super(itemView);
             imgHolder = itemView.findViewById(R.id.item_image_download);
             btnDownload = itemView.findViewById(R.id.btnDownloadURL);
+            rl_download = itemView.findViewById(R.id.rl_download_item);
+            ads = itemView.findViewById(R.id.ads_download);
         }
+    }
+    public  interface OnclickDownload {
+        void clickDownload(int position);
     }
 }

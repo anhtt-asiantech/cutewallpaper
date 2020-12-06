@@ -29,7 +29,7 @@
             android:textColor="#EDEDFF"
             android:textSize="@dimen/s_10"
             android:background="@drawable/button_setwallpaper"
-            android:layout_height="@dimen/h_30"/>
+            android:layout_height="@dimen/w_30"/>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

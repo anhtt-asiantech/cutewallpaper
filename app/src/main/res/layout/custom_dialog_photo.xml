@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
         android:background="@drawable/dot_background_photo"
-        android:layout_height="@dimen/h_100">
+        android:layout_height="@dimen/w_100">
 
     </RelativeLayout>
 </RelativeLayout>

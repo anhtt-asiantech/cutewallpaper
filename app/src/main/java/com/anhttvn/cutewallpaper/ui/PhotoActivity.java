@@ -42,7 +42,6 @@ public class PhotoActivity extends BaseActivity implements PhotoAdapter.OnclickS
 
     private String [] images;
     private ArrayList<String> listImages;
-//    private ArrayList<String> listPhotoFolder;
     private PhotoAdapter mAdapterPhoto;
     private boolean mSelectEvent = false;
     private String nameSelect;
@@ -51,10 +50,19 @@ public class PhotoActivity extends BaseActivity implements PhotoAdapter.OnclickS
     private RecyclerView recycler_photo;
     private TextView tv_photo,tv_no_data_photo;
     private Button btnDefault,btnFolder;
+
+
+
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        this.init();
+    protected void init() {
+        recycler_photo = findViewById(R.id.recycler_photo);
+        tv_photo = findViewById(R.id.tv_photo);
+        tv_photo.setTypeface(fontDefault());
+        btnDefault = findViewById(R.id.btnDefault);
+        btnFolder = findViewById(R.id.btnFolder);
+        tv_no_data_photo = findViewById(R.id.tv_no_data_photo);
+        tv_no_data_photo.setTypeface(fontDefault());
         this.dataPhoto();
         this.initAdapter();
         nameSelect = this.getString(R.string.txt_photo) +" " + this.getString(R.string.txt_default);
@@ -64,20 +72,6 @@ public class PhotoActivity extends BaseActivity implements PhotoAdapter.OnclickS
         btnDefault.setBackgroundResource(R.drawable.button_gradient_download);
         btnFolder.setBackgroundColor(Color.GRAY);
         configAdsFull();
-    }
-
-    /**
-     * init config
-     */
-    private void init() {
-        recycler_photo = findViewById(R.id.recycler_photo);
-        tv_photo = findViewById(R.id.tv_photo);
-        tv_photo.setTypeface(fontDefault());
-        btnDefault = findViewById(R.id.btnDefault);
-        btnFolder = findViewById(R.id.btnFolder);
-        tv_no_data_photo = findViewById(R.id.tv_no_data_photo);
-        tv_no_data_photo.setTypeface(fontDefault());
-
     }
 
     /**
@@ -97,7 +91,7 @@ public class PhotoActivity extends BaseActivity implements PhotoAdapter.OnclickS
         showDialogTitle("Please wait Loading.....");
         this.listImages = new ArrayList<>();
         File[] listFile;
-        File file= new File(android.os.Environment.getExternalStorageDirectory(),"CuteWallpaperVN");
+        File file= new File(android.os.Environment.getExternalStorageDirectory(),"/Android/CuteVN");
 
         if (file.isDirectory())
         {
@@ -152,8 +146,8 @@ public class PhotoActivity extends BaseActivity implements PhotoAdapter.OnclickS
     }
     public void eventBack(View view) {
         finish();
-        showAdsFull();
     }
+
     @Override
     protected int getLayoutID() {
         return R.layout.activity_photo;
@@ -353,7 +347,8 @@ public class PhotoActivity extends BaseActivity implements PhotoAdapter.OnclickS
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        showAdsFull();
         finish();
     }
+
+
 }

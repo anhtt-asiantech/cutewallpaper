@@ -3,26 +3,16 @@ package com.anhttvn.cutewallpaper.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Cutewallpaper {
-    @SerializedName("cutewallpaper")
-    @Expose
-    private List<Cutewallpaper> listItem = null;
-    @SerializedName("position")
-    @Expose
-    private Integer position;
+public class Cutewallpaper implements Serializable {
     @SerializedName("url")
     @Expose
     private String url;
-
-    public Integer getPosition() {
-        return position;
-    }
-
-    public void setPosition(Integer position) {
-        this.position = position;
-    }
+    @SerializedName("ads")
+    @Expose
+    private int ads;
 
     public String getUrl() {
         return url;
@@ -32,11 +22,10 @@ public class Cutewallpaper {
         this.url = url;
     }
 
-    public List<Cutewallpaper> getListItem() {
-        return listItem;
+    public void setAds(int ads) {
+        this.ads = ads;
     }
-
-    public void setListItem(List<Cutewallpaper> listItem) {
-        this.listItem = listItem;
+    public int getAds() {
+        return ads;
     }
 }

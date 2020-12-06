@@ -26,7 +26,7 @@
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            android:layout_marginTop="@dimen/h_10"
+            android:layout_marginTop="@dimen/w_10"
             android:text="@string/txt_home_screen"
             android:textColor="#EDEDFF"
             android:textSize="@dimen/s_10"
@@ -38,7 +38,7 @@
             android:shadowColor="#2AA89B"
             android:shadowDx="0"
             android:shadowDy="0"
-            android:layout_marginTop="@dimen/h_10"
+            android:layout_marginTop="@dimen/w_10"
             android:shadowRadius="5"
             android:text="@string/txt_lock_screen"
             android:textColor="#EDEDFF"
@@ -52,7 +52,7 @@
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            android:layout_marginTop="@dimen/h_10"
+            android:layout_marginTop="@dimen/w_10"
             android:textColor="#EDEDFF"
             android:text="@string/txt_home_lock_screen"
             android:textSize="@dimen/s_10"
@@ -62,8 +62,8 @@
             android:id="@+id/btnCloseDialog"
             android:layout_width="wrap_content"
             android:text="@string/txt_close"
-            android:layout_marginRight="@dimen/h_10"
-            android:layout_marginEnd="@dimen/h_10"
+            android:layout_marginRight="@dimen/w_10"
+            android:layout_marginEnd="@dimen/w_10"
             android:shadowColor="#2AA89B"
             android:layout_marginTop="@dimen/s_20"
             android:shadowDx="0"
@@ -73,7 +73,7 @@
             android:textColor="#EDEDFF"
             android:textSize="@dimen/s_10"
             android:background="@drawable/button_gradient_download"
-            android:layout_height="@dimen/h_30"/>
+            android:layout_height="@dimen/w_30"/>
     </LinearLayout>
 
 </RelativeLayout>

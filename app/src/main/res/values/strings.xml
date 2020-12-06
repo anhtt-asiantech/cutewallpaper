@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CuteWallpaper</string>
+    <string name="app_name">Cute Wallpaper</string>
     <string name="dialog_ok_btn">OK</string>
     <string name="txt_wallpaper">Wallpaper</string>
     <string name="txt_download">Download</string>
@@ -16,5 +16,6 @@
     <string name="txt_home_screen">HOME SCREEN</string>
     <string name="txt_lock_screen">LOCK SCREEN</string>
     <string name="txt_home_lock_screen"><![CDATA[HOME&LOCK SCREEN]]></string>
-    <string name="txt_version">1.0.1</string>
+    <string name="txt_version">1.1.2</string>
+    <string name="txt_type_cute">Cute Type</string>
 </resources>
