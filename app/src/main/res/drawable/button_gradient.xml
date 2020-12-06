@@ -19,11 +19,11 @@
             <corners
                 android:radius="20dp"
                 />
-            <solid android:color="#009245" />
+            <solid android:color="#414345" />
             <gradient
-                android:startColor="#FCEE21"
-                android:centerColor="#00A8C5"
-                android:endColor="#D9E021"
+                android:startColor="#232526"
+                android:centerColor="#414345"
+                android:endColor="#232526"
                 android:angle="90"/>
         </shape>
     </item>

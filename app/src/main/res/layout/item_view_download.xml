@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="@dimen/w_250"
-    android:layout_height="@dimen/w_250">
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:ads="http://schemas.android.com/apk/res-auto">
     <RelativeLayout
+        android:id="@+id/rl_download_item"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/item_image_download"
             android:layout_width="match_parent"
             android:contentDescription="@string/app_name"
             android:src="@drawable/g"
-            android:scaleType="fitCenter"
-            android:layout_above="@+id/btnDownloadURL"
-            android:layout_height="match_parent"/>
+            android:layout_marginLeft="@dimen/w_100"
+            android:layout_marginRight="@dimen/w_100"
+            android:scaleType="fitXY"
+            android:layout_height="wrap_content"/>
         <Button
             android:id="@+id/btnDownloadURL"
             android:layout_width="@dimen/w_100"
-            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:layout_below="@+id/item_image_download"
+            android:layout_marginTop="@dimen/w_10"
             android:text="@string/txt_download"
             android:shadowColor="#2AA89B"
             android:shadowDx="0"
@@ -27,7 +30,13 @@
             android:textColor="#EDEDFF"
             android:textSize="@dimen/s_10"
             android:background="@drawable/button_gradient_download"
-            android:layout_height="@dimen/h_30"/>
+            android:layout_height="@dimen/w_30"/>
     </RelativeLayout>
-
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/ads_download"
+        android:layout_width="match_parent"
+        ads:adSize="SMART_BANNER"
+        android:visibility="gone"
+        ads:adUnitId="@string/banner_ad_unit_id"
+        android:layout_height="wrap_content"/>
 </androidx.cardview.widget.CardView>
